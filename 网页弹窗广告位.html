@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页弹窗广告</title>
+</head>
+<body>
+    <script>
+        var ad = null
+        setTimeout(function(){
+
+            ad = window.open('https://www.bilibili.com/','','width=500,height=500,left=0,right=0')
+
+            var x = window.outerWidth/2 - ad.outerWidth/2
+            var y = window.outerHeight/2 - ad.outerHeight/2
+            ad.moveTo(x,y)
+
+        }, 1000)
+
+        setTimeout(function(){
+
+            if( !ad.closed )
+            { ad.close() }
+            
+        }, 10000)
+    </script>
+</body>
+</html>
