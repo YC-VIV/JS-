@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付成功</title>
+</head>
+
+<script>
+    window.onload = function(){
+        toBack = function(){
+            window.location.href = "商品页.html"
+        }
+        var second = document.getElementById("second")
+        setInterval(function(){
+            if( second.innerHTML > 0 )
+            {    
+                second.innerHTML -= 1
+            }
+            if( second.innerHTML == 0 )
+            {
+                window.location.href = "商品页.html"
+            }
+        },1000)
+    }
+</script>
+
+<body>
+    <div class="box">
+        <div class="success-img" style="margin: 0 auto;width: 150px;padding: 30px 0 10px 0;">
+            <img src="successpay.jpg" alt="支付成功" width="150px">
+        </div>
+        
+        <h1 id="success-title">支付成功</h1>
+        <p id="return-text"><span id="second">10</span> 秒后返回首页</p>
+
+        <div class="box-btn">
+            <button class="buy-btn" onclick="toBack()">立即返回</button>
+        </div>
+    </div>
+
+</body>
+
+<style>
+*{
+    margin: 0;
+}
+
+.box{
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    height: 600px;
+    width: 1200px;
+}
+
+#success-title{
+    text-align: center;
+    color: #45d7aa;
+}
+
+#return-text{
+    margin: 10px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+#second{
+    font-size: 30px;
+    color: red;
+}
+
+.box-btn{
+    width: 80px;
+    margin: 10px auto;
+}
+
+.buy-btn{
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+}
+</style>
+
+</html>
